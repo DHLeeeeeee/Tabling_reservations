@@ -1,0 +1,162 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+
+  background: #ced8e4;
+  height: 100vh;
+  min-height: 655px;
+
+  font-family: sans-serif;
+
+  overflow: hidden;
+}
+
+/* 헤더 */
+
+.header {
+  padding: 32px 0 64px 0;
+  font-size: 64px;
+  font-weight: 400;
+  text-align: center;
+
+  height: 20%;
+}
+
+/* Main */
+
+.reservation-container {
+  display: flex;
+  gap: 16px;
+  padding: 8px;
+
+  flex-grow: 1;
+  height: 80%;
+
+  font-weight: 600;
+}
+
+/* 예약 목록 */
+
+.reservation-list {
+  flex-grow: 1;
+}
+
+.reservation-list ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  height: 100%;
+
+  overflow-y: scroll;
+  scrollbar-width: none; /* 파이어폭스 */
+  -ms-overflow-style: none; /* 인터넷 익스플로러 */
+}
+
+/* ( 크롬, 사파리, 오페라, 엣지 ) 스크롤바 표시 X */
+.reservation-list ul::-webkit-scrollbar {
+  display: none;
+}
+
+.reservation-list__box {
+  display: flex;
+  align-items: center;
+  padding: 16px 0;
+  background: #fff;
+
+  border-radius: 16px;
+}
+
+.reservation-list__box .box-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 20%;
+}
+
+.reservation-list__box .box-info .box-info__status.status--reserved {
+  color: #162149;
+}
+
+.reservation-list__box .box-info .box-info__status.status--seated {
+  color: #3bb94c;
+}
+
+.reservation-list__box .box-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 60%;
+}
+
+.reservation-list__box .box-btnArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+
+.reservation-list__box .box-btnArea .status-btn {
+  padding: 8px 24px;
+  background: #162149;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+
+  cursor: pointer;
+}
+
+.reservation-list__box .box-btnArea .status-btn.status--seated {
+  background: #fff;
+  border: 1px solid #162149;
+  color: #162149;
+}
+
+/* 예약 상세 */
+
+.reservation-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  background: #fff;
+  border-radius: 16px;
+
+  flex-basis: 33%;
+}
+
+.reservation-details h2 {
+  padding-bottom: 24px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.reservation-details ul {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.reservation-details ul li {
+  display: flex;
+  width: 100%;
+}
+
+.reservation-details span {
+  word-break: keep-all;
+}
+
+.reservation-details span:first-child {
+  flex-basis: 33%;
+  color: #bbb;
+}
+
+.reservation-details span:nth-child(2) {
+  flex-basis: 66%;
+  line-height: 1.5;
+}
+
+.reservation-details .request {
+  display: flex;
+}
