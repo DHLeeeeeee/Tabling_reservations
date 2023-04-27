@@ -45,10 +45,10 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-
   height: 100%;
-
   overflow-y: scroll;
+
+  /* 스크롤바 표시 X */
   scrollbar-width: none; /* 파이어폭스 */
   -ms-overflow-style: none; /* 인터넷 익스플로러 */
 }
@@ -75,9 +75,13 @@
   width: 20%;
 }
 
+/* status reserved */
+
 .reservation-list__box .box-info .box-info__status.status--reserved {
   color: #162149;
 }
+
+/* status seated */
 
 .reservation-list__box .box-info .box-info__status.status--seated {
   color: #3bb94c;
@@ -97,6 +101,8 @@
   width: 20%;
 }
 
+/* 예약 리스트 버튼 스타일 */
+
 .reservation-list__box .box-btnArea .status-btn {
   padding: 8px 24px;
   background: #162149;
@@ -106,6 +112,8 @@
 
   cursor: pointer;
 }
+
+/* status seated */
 
 .reservation-list__box .box-btnArea .status-btn.status--seated {
   background: #fff;
