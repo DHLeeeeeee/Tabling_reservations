@@ -1,5 +1,9 @@
+// 로드 시 API 요청
+
+window.addEventListener('load', loadReservations);
+
 let reservations; // 예약 목록 데이터
-const reservationsList = document.querySelector('.reservation-list ul'); // 예약 목록 리스트 컨테이너
+const reservationsList = document.querySelector('.reservation-list ul'); // 예약 목록 리스트
 
 // 예약 상세
 const reservationStatus = document.querySelector('.reservation-info__status'); // 예약 상태
@@ -9,10 +13,6 @@ const customerName = document.querySelector('.customer-info__name'); // 고객 �
 const customerLevel = document.querySelector('.customer-info__level'); // 고객 등급
 const customerMemo = document.querySelector('.customer-info__memo'); // 고객 메모
 const request = document.querySelector('.request_text'); // 요청사항
-
-// 로드 시 API get 요청
-
-window.addEventListener('load', loadReservations);
 
 // API 요청 함수
 
