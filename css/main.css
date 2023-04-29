@@ -27,11 +27,10 @@
 .reservation-container {
   display: flex;
   gap: 16px;
-  padding: 8px;
-
   flex-grow: 1;
-  height: 80%;
 
+  padding: 8px;
+  height: 80%;
   font-weight: 600;
 }
 
@@ -58,7 +57,7 @@
   display: none;
 }
 
-.reservation-list__itm {
+.reservation-itm {
   display: flex;
   align-items: center;
   padding: 16px 0;
@@ -67,7 +66,7 @@
   border-radius: 16px;
 }
 
-.reservation-list__itm .itm-info {
+.reservation-itm .itm-info {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -77,24 +76,24 @@
 
 /* status reserved */
 
-.reservation-list__itm .itm-info .itm-info__status.status--reserved {
+.reservation-itm .itm-info .itm-info__status.status--reserved {
   color: #162149;
 }
 
 /* status seated */
 
-.reservation-list__itm .itm-info .itm-info__status.status--seated {
+.reservation-itm .itm-info .itm-info__status.status--seated {
   color: #3bb94c;
 }
 
-.reservation-list__itm .itm-detail {
+.reservation-itm .itm-content {
   display: flex;
   flex-direction: column;
   gap: 8px;
   width: 60%;
 }
 
-.reservation-list__itm .itm-btnArea {
+.reservation-itm .itm-btnBox {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -103,7 +102,7 @@
 
 /* 예약 리스트 버튼 스타일 */
 
-.reservation-list__itm .itm-btnArea .status-btn {
+.reservation-itm .itm-btnBox .status-btn {
   padding: 8px 24px;
   background: #162149;
   border: none;
@@ -111,14 +110,6 @@
   color: #fff;
 
   cursor: pointer;
-}
-
-/* status seated */
-
-.reservation-list__itm .itm-btnArea .status-btn.status--seated {
-  background: #fff;
-  border: 1px solid #162149;
-  color: #162149;
 }
 
 /* 예약 상세 */
@@ -130,8 +121,12 @@
   padding: 16px;
   background: #fff;
   border-radius: 16px;
-
+  min-width: 33%;
   flex-basis: 33%;
+}
+
+.reservation-details > * {
+  height: 33%;
 }
 
 .reservation-details h2 {
