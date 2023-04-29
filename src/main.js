@@ -110,11 +110,11 @@ const reservationApp = (() => {
     itmContent.appendChild(menu);
 
     const tableNames = reservation.tables.map((table) => table.name).join(', ');
-    const menus = reservation.menus.map((menu) => `${menu.name}(${menu.qty})`).join(', ');
+    const menus = reservation.menus.map((menu) => `${menu.name} (${menu.qty})`).join(', ');
 
     nameAndTable.textContent = `${reservation.customer.name} - 테이블명[${tableNames}]`;
     numberOfPeople.textContent = `성인 ${reservation.customer.adult} 아이 ${reservation.customer.child}`;
-    menu.textContent = `메뉴명(갯수) [${menus}]`;
+    menu.textContent = `메뉴명 (갯수) [${menus}]`;
 
     return itmContent;
   };
