@@ -77,13 +77,13 @@
 /* status reserved */
 
 .reservation-itm .itm-info .itm-info__status.status--reserved {
-  color: #162149;
+  color: #3bb94c;
 }
 
 /* status seated */
 
 .reservation-itm .itm-info .itm-info__status.status--seated {
-  color: #3bb94c;
+  color: #162149;
 }
 
 .reservation-itm .itm-content {
