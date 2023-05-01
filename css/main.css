@@ -35,7 +35,6 @@
   border-radius: 16px;
 
   /* 스크롤 바 X */
-  -ms-overflow-style: none; /* 인터넷 익스플로러 */
   scrollbar-width: none; /* 파이어폭스 */
 }
 
@@ -85,6 +84,7 @@
   gap: 8px;
 
   flex-grow: 1;
+  flex-shrink: 0;
   max-width: 60%;
 }
 
@@ -125,7 +125,6 @@
   padding: 16px;
   background: #fff;
   height: 100%;
-
   border-radius: 16px;
 }
 
@@ -135,17 +134,10 @@
   font-size: 24px;
 }
 
-.reservation-details .reservation-info,
-.customer-info {
-  max-height: 45%;
-}
-
 .reservation-details ul {
   display: flex;
   flex-direction: column;
   gap: 16px;
-
-  max-height: calc(100% - 56px);
 }
 
 .reservation-details ul li {
@@ -156,21 +148,29 @@
   overflow: hidden;
 }
 
-.reservation-details .customer-info .customer-info__memo {
-  overflow-y: scroll;
-  /* 스크롤 바 X */
-  -ms-overflow-style: none; /* 인터넷 익스플로러 */
-  scrollbar-width: none; /* 파이어폭스 */
+.reservation-info__status,
+.reservation-info__timeReserved,
+.reservation-info__timeRegistered,
+.customer-info__name,
+.customer-info__level {
+  /* 1줄제한 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* 크롬, 사파리, 오페라, 엣지 스크롤 바 X */
-.reservation-details .customer-info .customer-info__memo::-webkit-scrollbar {
-  display: none;
+.reservation-details .customer-info .customer-info__memo,
+.reservation-details .request .request_text {
+  /* 3줄제한 */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .reservation-details .request {
   display: flex;
-  height: 10%;
 }
 
 .reservation-details span:first-child {
@@ -315,6 +315,5 @@
   }
 
   .reservation-details .customer-info {
-    min-height: 30%;
   }
 }
