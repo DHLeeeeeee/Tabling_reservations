@@ -10,10 +10,10 @@ const reservationApp = (() => {
     window.addEventListener('DOMContentLoaded', async () => {
       await getReservations();
       updateReservation();
-    });
 
-    const reservations = loadData();
-    displayReservationDetails(reservations[0]);
+      const reservations = loadData();
+      displayReservationDetails(reservations[0]);
+    });
   };
 
   // API 호출
