@@ -2,6 +2,7 @@
   height: 100vh;
   min-height: 655px;
   background: #ced8e4;
+  overflow: hidden;
 }
 
 /* 헤더 */
@@ -191,6 +192,28 @@
 @media (max-width: 1024px) {
   /* 메인 컨텐츠 */
 
+  .reservation-container.on::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .reservation-container.on::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    backdrop-filter: blur(5px);
+  }
+
   .reservation-container {
     display: block;
   }
@@ -208,17 +231,23 @@
   /* 예약 상세 */
 
   .details-container {
-    display: none;
+    position: fixed;
+    top: 100%;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    opacity: 0;
+
+    transition: all 0.5s ease-in-out;
   }
 
   .details-container.on {
-    display: block;
-    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    backdrop-filter: blur(8px) brightness(50%);
+    opacity: 1;
+    z-index: 999;
   }
 
   .reservation-details {

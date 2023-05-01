@@ -1,5 +1,6 @@
 const reservationApp = (() => {
   const elements = {
+    reservationContainer: document.querySelector('.reservation-container'),
     reservationsList: document.querySelector('.reservation-list ul'),
     detailsContent: document.querySelector('.details-container'),
   };
@@ -224,7 +225,9 @@ const reservationApp = (() => {
 
   const handleListClickMobile = () => {
     const details = elements.detailsContent;
+    const reservationList = elements.reservationContainer;
     details.classList.add('on');
+    reservationList.classList.add('on');
   };
 
   // 닫기 버튼 클릭 시 디테일 컨테이너 off
@@ -232,7 +235,9 @@ const reservationApp = (() => {
   const mClose = elements.detailsContent.querySelector('.m-close');
   const handleMcloseClick = () => {
     const details = elements.detailsContent;
+    const reservationList = elements.reservationContainer;
     details.classList.remove('on');
+    reservationList.classList.remove('on');
   };
   mClose.addEventListener('click', handleMcloseClick);
 
@@ -241,7 +246,9 @@ const reservationApp = (() => {
   const handleBackgroundClick = (e) => {
     if (e.target === elements.detailsContent) {
       const details = elements.detailsContent;
+      const reservationList = elements.reservationContainer;
       details.classList.remove('on');
+      reservationList.classList.remove('on');
     }
   };
   elements.detailsContent.addEventListener('click', handleBackgroundClick);
