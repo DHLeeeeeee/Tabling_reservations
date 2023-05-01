@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: inherit;
+  font-weight: inherit;
+  box-sizing: border-box;
+  text-decoration: none;
+  line-height: 1.2;
+}
+header,
+main,
+section {
+  display: block;
+}
+ol,
+ul {
+  list-style: none;
+}

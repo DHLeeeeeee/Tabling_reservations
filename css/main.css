@@ -1,165 +1,287 @@
 .wrap {
-  display: flex;
-  flex-direction: column;
-
-  background: #ced8e4;
   height: 100vh;
   min-height: 655px;
-
-  font-family: sans-serif;
-
-  overflow: hidden;
+  background: #ced8e4;
 }
 
 /* 헤더 */
 
 .header {
-  padding: 32px 0 64px 0;
-  font-size: 64px;
-  font-weight: 400;
-  text-align: center;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 20%;
 }
 
-/* Main */
+.header h1 {
+  font-size: 64px;
+}
+
+/* 메인 */
 
 .reservation-container {
   display: flex;
-  gap: 16px;
-  flex-grow: 1;
-
+  gap: 8px;
   padding: 8px;
   height: 80%;
-  font-weight: 600;
 }
 
 /* 예약 목록 */
 
 .reservation-list {
   flex-grow: 1;
+  overflow-y: scroll;
+  border-radius: 16px;
+
+  /* 스크롤 바 X */
+  -ms-overflow-style: none; /* 인터넷 익스플로러 */
+  scrollbar-width: none; /* 파이어폭스 */
+}
+
+/* 크롬, 사파리, 오페라, 엣지 스크롤 바 X */
+.reservation-list::-webkit-scrollbar {
+  display: none;
 }
 
 .reservation-list ul {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  height: 100%;
-  overflow-y: scroll;
-
-  /* 스크롤바 표시 X */
-  scrollbar-width: none; /* 파이어폭스 */
-  -ms-overflow-style: none; /* 인터넷 익스플로러 */
+  padding: 0 8px 0;
 }
 
-/* ( 크롬, 사파리, 오페라, 엣지 ) 스크롤바 표시 X */
-.reservation-list ul::-webkit-scrollbar {
-  display: none;
-}
-
-.reservation-itm {
+.reservation-list ul li {
   display: flex;
-  align-items: center;
   padding: 16px 0;
   background: #fff;
-
   border-radius: 16px;
+
+  cursor: pointer;
 }
 
-.reservation-itm .itm-info {
+.reservation-list ul li .itm-info {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 8px;
-  width: 20%;
+
+  flex-basis: 20%;
+  flex-shrink: 0;
 }
 
-/* status reserved */
-
-.reservation-itm .itm-info .itm-info__status.status--reserved {
+.reservation-list ul li .itm-info .itm-info__status.status--reserved {
   color: #3bb94c;
 }
 
-/* status seated */
-
-.reservation-itm .itm-info .itm-info__status.status--seated {
+.reservation-list ul li .itm-info .itm-info__status.status--seated {
   color: #162149;
 }
 
-.reservation-itm .itm-content {
+.reservation-list ul li .itm-content {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  width: 60%;
+
+  flex-grow: 1;
+  max-width: 60%;
 }
 
-.reservation-itm .itm-btnBox {
+.reservation-list ul li .itm-content p {
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.reservation-list ul li .itm-btnBox {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 20%;
+  flex-basis: 20%;
+  flex-shrink: 0;
 }
 
-/* 예약 리스트 버튼 스타일 */
-
-.reservation-itm .itm-btnBox .status-btn {
-  padding: 8px 24px;
+.reservation-list ul li .itm-btnBox .status-btn {
+  padding: 8px 16px;
   background: #162149;
-  border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   color: #fff;
-
   cursor: pointer;
 }
 
 /* 예약 상세 */
 
+.details-container {
+  flex-basis: 40%;
+  flex-shrink: 0;
+}
+
 .reservation-details {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
   padding: 16px;
   background: #fff;
-  border-radius: 16px;
-  min-width: 33%;
-  flex-basis: 33%;
-}
+  height: 100%;
 
-.reservation-details > * {
-  height: 33%;
+  border-radius: 16px;
 }
 
 .reservation-details h2 {
-  padding-bottom: 24px;
-  font-size: 24px;
+  margin-bottom: 32px;
   text-align: center;
+  font-size: 24px;
+}
+
+.reservation-details .reservation-info,
+.customer-info {
+  max-height: 45%;
 }
 
 .reservation-details ul {
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  max-height: calc(100% - 56px);
 }
 
 .reservation-details ul li {
   display: flex;
-  width: 100%;
 }
 
-.reservation-details span {
-  word-break: keep-all;
+.reservation-details .customer-info ul li:last-child {
+  overflow: hidden;
 }
 
-.reservation-details span:first-child {
-  flex-basis: 33%;
-  color: #bbb;
+.reservation-details .customer-info .customer-info__memo {
+  overflow-y: scroll;
+  /* 스크롤 바 X */
+  -ms-overflow-style: none; /* 인터넷 익스플로러 */
+  scrollbar-width: none; /* 파이어폭스 */
 }
 
-.reservation-details span:nth-child(2) {
-  flex-basis: 66%;
-  line-height: 1.5;
+/* 크롬, 사파리, 오페라, 엣지 스크롤 바 X */
+.reservation-details .customer-info .customer-info__memo::-webkit-scrollbar {
+  display: none;
 }
 
 .reservation-details .request {
   display: flex;
+  height: 10%;
+}
+
+.reservation-details span:first-child {
+  flex-basis: 40%;
+  flex-shrink: 0;
+  color: #ced8e4;
+}
+
+.m-close {
+  display: none;
+}
+
+/* 
+
+모바일 
+
+*/
+
+@media (max-width: 1024px) {
+  /* 메인 컨텐츠 */
+
+  .reservation-container {
+    display: block;
+  }
+
+  /* 예약 목록 */
+
+  .reservation-list {
+    height: 100%;
+  }
+
+  .reservation-list ul {
+    padding: 0;
+  }
+
+  /* 예약 상세 */
+
+  .details-container {
+    display: none;
+  }
+
+  .details-container.on {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    backdrop-filter: blur(8px) brightness(50%);
+  }
+
+  .reservation-details {
+    position: relative;
+    margin-top: 15vh;
+  }
+
+  .m-close {
+    display: block;
+    position: absolute;
+    right: 10%;
+    font-size: 16px;
+    transform: translate(0, 4px);
+    background: none;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 768px) {
+  /* 헤더 */
+
+  .header h1 {
+    font-size: 48px;
+  }
+
+  /* 메인 컨텐츠 */
+
+  /* 예약 목록 */
+
+  .reservation-list {
+    font-size: 13px;
+  }
+
+  .reservation-list ul li {
+    padding: 16px 8px;
+  }
+
+  .reservation-list ul li .itm-info {
+    flex-basis: 25%;
+    padding: 0 8px 0 0;
+  }
+
+  .reservation-list ul li .itm-content {
+    max-width: 50%;
+  }
+
+  .reservation-list ul li .itm-btnBox {
+    flex-basis: 25%;
+    padding: 0 0 0 8px;
+  }
+
+  .reservation-list ul li .itm-btnBox .status-btn {
+    padding: 8px 16px;
+  }
+
+  /* 예약 상세 */
+
+  .reservation-details {
+    font-size: 13px;
+  }
+
+  .reservation-details h2 {
+    margin-bottom: 24px;
+    font-size: 16px;
+  }
 }

@@ -1,7 +1,7 @@
 const reservationApp = (() => {
   const elements = {
     reservationsList: document.querySelector('.reservation-list ul'),
-    detailsContent: document.querySelector('.reservation-details'),
+    detailsContent: document.querySelector('.details-container'),
   };
 
   // 초기화 함수
@@ -80,6 +80,8 @@ const reservationApp = (() => {
 
     const itmBtnBox = createItmBtn(reservation);
     listItm.appendChild(itmBtnBox);
+
+    listItm.addEventListener('click', handleListClickMobile);
   };
 
   // 리스트 ITEM 의 시간과 상태 생성함수
@@ -112,7 +114,7 @@ const reservationApp = (() => {
     const tableNames = reservation.tables.map((table) => table.name).join(', ');
     const menus = reservation.menus.map((menu) => `${menu.name} (${menu.qty})`).join(', ');
 
-    nameAndTable.textContent = `${reservation.customer.name} - 테이블명[${tableNames}]`;
+    nameAndTable.textContent = `${reservation.customer.name} - 테이블명 [${tableNames}]`;
     numberOfPeople.textContent = `성인 ${reservation.customer.adult} 아이 ${reservation.customer.child}`;
     menu.textContent = `메뉴명 (갯수) [${menus}]`;
 
@@ -215,6 +217,34 @@ const reservationApp = (() => {
       element.textContent = '';
     });
   };
+
+  // 모바일 레이아웃 기능구현
+
+  // 리스트 클릭 시 디테일 컨테이너 on
+
+  const handleListClickMobile = () => {
+    const details = elements.detailsContent;
+    details.classList.add('on');
+  };
+
+  // 닫기 버튼 클릭 시 디테일 컨테이너 off
+
+  const mClose = elements.detailsContent.querySelector('.m-close');
+  const handleMcloseClick = () => {
+    const details = elements.detailsContent;
+    details.classList.remove('on');
+  };
+  mClose.addEventListener('click', handleMcloseClick);
+
+  // 뒷 배경 클릭 시 디테일 컨테이너 off
+
+  const handleBackgroundClick = (e) => {
+    if (e.target === elements.detailsContent) {
+      const details = elements.detailsContent;
+      details.classList.remove('on');
+    }
+  };
+  elements.detailsContent.addEventListener('click', handleBackgroundClick);
 
   return { init };
 })();

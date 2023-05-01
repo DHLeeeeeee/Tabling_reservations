@@ -6,7 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>예약 목록</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+
+  <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/main.css">
   <script src="./src/main.js" defer></script>
 </head>
@@ -14,13 +15,13 @@
 <body>
   <div class="wrap">
 
-    <!-- Header -->
+    <!-- 헤더 -->
 
     <header class="header">
       <h1>예약 목록</h1>
     </header>
 
-    <!-- Main -->
+    <!-- 메인 컨텐츠 -->
 
     <main class="reservation-container">
 
@@ -28,51 +29,55 @@
 
       <section class="reservation-list">
         <ul>
+          <!-- 예약 리스트 동적 생성 -->
 
         </ul>
       </section>
 
       <!-- 예약 상세 -->
 
-      <section class="reservation-details">
-        <div class="reservation-info">
-          <h2>예약 정보</h2>
-          <ul>
-            <li>
-              <span>예약 상태</span>
-              <span class="reservation-info__status"></span>
-            </li>
-            <li>
-              <span>예약 시간</span>
-              <span class="reservation-info__timeReserved"></span>
-            </li>
-            <li>
-              <span>접수 시간</span>
-              <span class="reservation-info__timeRegistered"></span>
-            </li>
-          </ul>
+      <section class="details-container">
+        <div class="reservation-details">
+          <div class="reservation-info">
+            <h2>예약 정보</h2>
+            <ul>
+              <li>
+                <span>예약 상태</span>
+                <span class="reservation-info__status"></span>
+              </li>
+              <li>
+                <span>예약 시간</span>
+                <span class="reservation-info__timeReserved"></span>
+              </li>
+              <li>
+                <span>접수 시간</span>
+                <span class="reservation-info__timeRegistered"></span>
+              </li>
+            </ul>
+          </div>
+          <div class="customer-info">
+            <h2>고객 정보</h2>
+            <ul>
+              <li>
+                <span>고객 성명</span>
+                <span class="customer-info__name"></span>
+              </li>
+              <li>
+                <span>고객 등급</span>
+                <span class="customer-info__level"></span>
+              </li>
+              <li>
+                <span>고객 메모</span>
+                <span class="customer-info__memo"></span>
+              </li>
+            </ul>
+          </div>
+          <p class="request">
+            <span>요청사항</span>
+            <span class="request_text"></span>
+          </p>
+          <button class="m-close">닫기</button>
         </div>
-        <div class="customer-info">
-          <h2>고객 정보</h2>
-          <ul>
-            <li>
-              <span>고객 성명</span>
-              <span class="customer-info__name"></span>
-            </li>
-            <li>
-              <span>고객 등급</span>
-              <span class="customer-info__level"></span>
-            </li>
-            <li>
-              <span>고객 메모</span>
-              <span class="customer-info__memo"></span>
-            </li>
-          </ul>
-        </div>
-        <p class="request">
-          <span>요청사항</span>
-          <span class="request_text"></span>
-        </p>
       </section>
     </main>
   </div>
