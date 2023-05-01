@@ -7,7 +7,7 @@ const reservationApp = (() => {
 
   // 초기화 함수
   const init = () => {
-    window.addEventListener('load', async () => {
+    window.addEventListener('DOMContentLoaded', async () => {
       await getReservations();
       updateReservation();
     });
