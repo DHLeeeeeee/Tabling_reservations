@@ -314,4 +314,9 @@
     margin-bottom: 24px;
     font-size: 16px;
   }
+
+  .m-close {
+    font-size: 13px;
+    transform: translate(0, 1.5px);
+  }
 }
