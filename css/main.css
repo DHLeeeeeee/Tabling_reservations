@@ -284,4 +284,8 @@
     margin-bottom: 24px;
     font-size: 16px;
   }
+
+  .reservation-details .customer-info {
+    min-height: 30%;
+  }
 }
