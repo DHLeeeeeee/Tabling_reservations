@@ -47,7 +47,8 @@ const reservationApp = (() => {
 
   // 시간 형식 포맷 함수
   const formatDate = (time, format) => {
-    const date = new Date(time);
+    // 사파리 브라우저 호환을 위해서 toISOString 메소드 사용
+    const date = new Date(time).toISOString();
     let formattedDate = format;
 
     const hours = date.getHours();
