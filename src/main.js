@@ -5,6 +5,9 @@ const reservationApp = (() => {
     detailsContent: document.querySelector('.details-container'),
   };
 
+  // API 요청경로
+  const apiUrl = 'https://frontend.tabling.co.kr/v1/store/9533/reservations';
+
   // 초기화 함수
   const init = () => {
     window.addEventListener('DOMContentLoaded', async () => {
@@ -19,7 +22,7 @@ const reservationApp = (() => {
   // API 호출
   const getReservations = async () => {
     try {
-      const response = await fetch('https://frontend.tabling.co.kr/v1/store/9533/reservations');
+      const response = await fetch(apiUrl);
       const data = await response.json();
       localStorage.setItem('reservations', JSON.stringify(data.reservations));
     } catch (e) {
